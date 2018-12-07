@@ -1,2 +1,21 @@
 <h1>Companionship#index</h1>
 <p>Find me in app/views/companionship/index.html.erb</p>
+
+
+
+<table border="1">
+  <tr>
+    <th>Label</th>
+    <th></th>
+  </tr>
+
+  <% @companionships.each do |companionship| %>
+    <tr>
+      <td class = 'label'><%= companionship.label %></td>
+      <td><%= link_to 'Show', companionship_path(companionship) %></td>
+      <td><%= link_to 'Edit', companionship_path(companionship) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Companionship', new_companionship_path %>
