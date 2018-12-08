@@ -11,6 +11,14 @@ class CompanionshipsController < ApplicationController
     redirect_to @companionship
   end
 
+  def destroy
+    @companionship = Companionship.find(params[:id])
+
+    @companionship.destroy
+    redirect_to companionships_path
+  end
+
+
   def show
     @companionship = Companionship.find(params[:id])
   end

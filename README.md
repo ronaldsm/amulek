@@ -1,6 +1,7 @@
 # README
 
 https://infinite-shore-37463.herokuapp.com/
+https://bit.ly/2G71VBb≈
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
