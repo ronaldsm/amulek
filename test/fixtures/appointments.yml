@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-12-07
+  family: MyText
+  contact_info: MyText
+  other_info: MyText
+  companionship: one
+
+two:
+  date: 2018-12-07
+  family: MyText
+  contact_info: MyText
+  other_info: MyText
+  companionship: two
