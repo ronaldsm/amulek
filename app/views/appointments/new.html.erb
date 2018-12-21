@@ -1,11 +1,5 @@
-<h1>Companionship</h1>
-<p>
-  <%= @companionship.label %>
-</p>
-
-<h2>Add an appointment</h2>
-
-
+<h1>New Appointment</h1>
+<p>Create a new Appointment</p>
 
 
 <%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
@@ -31,7 +25,3 @@
    <%= form.submit %>
  </p>
 <% end %>
-
-
-
-<%= link_to 'view all', controller: 'companionships' %>

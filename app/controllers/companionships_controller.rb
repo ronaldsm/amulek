@@ -18,7 +18,6 @@ class CompanionshipsController < ApplicationController
     redirect_to companionships_path
   end
 
-
   def show
     @companionship = Companionship.find(params[:id])
   end
