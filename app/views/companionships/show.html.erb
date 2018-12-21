@@ -3,35 +3,12 @@
   <%= @companionship.label %>
 </p>
 
-<h2>Add an appointment</h2>
+<%= link_to 'all companionships', controller: 'companionships' %>
 
+<%= render '/appointments/form' %>
 
+<h2>Current Appointments</h2>
 
-
-<%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
-
- <p>
-   <%= form.label :date %><br>
-   <%= form.text_field :date, value: Date.today%>
- </p>
- <p>
-   <%= form.label :family %><br>
-   <%= form.text_field :body %>
- </p>
- <p>
-   <%= form.label :contact_info %><br>
-   <%= form.text_field :body %>
- </p>
- <p>
-   <%= form.label :other_info %><br>
-   <%= form.text_field :body %>
- </p>
-
- <p>
-   <%= form.submit %>
- </p>
-<% end %>
-
-
+<%= render '/appointments/appointment' %>
 
 <%= link_to 'view all', controller: 'companionships' %>

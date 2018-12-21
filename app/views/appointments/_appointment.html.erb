@@ -1,0 +1,24 @@
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Family</th>
+    <th>Contact info</th>
+    <th>Other</th>
+  </tr>
+  <% @companionship.appointments.each do |appointment| %>
+    <tr>
+      <td>
+        <%= appointment.date %>
+      </td>
+      <td>
+        <%= appointment.family %>
+      </td>
+      <td>
+        <%= appointment.contact_info %>
+      </td>
+      <td>
+        <%= appointment.other_info %>
+      </td>
+
+    </tr>
+  <% end %>
