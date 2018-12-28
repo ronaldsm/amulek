@@ -1,0 +1,17 @@
+<h1>All Appointments</h1>
+
+<table class = 'appointment-table'>
+  <tr>
+    <th>Label</th>
+    <th></th>
+  </tr>
+
+  <% @appointments.each do |appointment| %>
+    <tr>
+      <td class = 'companionship'><%= appointment.companionship.label %></td>
+      <td class = 'date'><%= appointment.date %></td>
+      <td class = 'family'><%= appointment.family %></td>
+      <td class = 'contact'><%= appointment.contact_info %></td>
+      <td class = 'other'><%= appointment.other_info %></td>
+  <% end %>
+</table>

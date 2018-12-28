@@ -1,6 +1,10 @@
 class AppointmentsController < ApplicationController
 
 
+  def index
+    @appointments = Appointment.all
+  end
+
   def create
     @companionship = Companionship.find(params[:companionship_id])
     @appointment = @companionship.appointments.create(appointment_params)
