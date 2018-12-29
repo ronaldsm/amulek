@@ -4,6 +4,8 @@ class CompanionshipsController < ApplicationController
     @companionships = Companionship.all
   end
 
+
+
   def create
     @companionship = Companionship.new(companionship_params)
 

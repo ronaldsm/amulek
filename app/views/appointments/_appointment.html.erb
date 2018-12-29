@@ -5,7 +5,7 @@
     <th>Contact info</th>
     <th>Other</th>
   </tr>
-  <% @companionship.appointments.each do |appointment| %>
+  <% @companionship.appointments.order(date: :asc).each do |appointment| %>
     <tr>
       <td>
         <%= appointment.date %>
