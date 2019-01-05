@@ -1,0 +1,26 @@
+// Place all the styles related to the Calendars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.dates {
+  text-align: right;
+  background-color: lightgray;
+}
+.date-label{
+  padding: 0;
+  vertical-align: top;
+}
+
+.calendar-table {
+  width: 100%;
+  vertical-align: top;
+}
+
+.weekdays{
+  background-color: gray;
+}
+
+.appt-data{
+  height: 2em;
+  font-size: 1em;
+}

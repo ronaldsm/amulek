@@ -1,0 +1,25 @@
+<h1>Calendar</h1>
+<h2><%= @companionship.label %></h2>
+
+  <table class = 'calendar-table'>
+    <tr class = 'weekdays'>
+      <% @dates.take(7).each do |day| %>
+          <td><%= day[:date].strftime("%A") %></td>
+      <% end %>
+    </tr>
+
+    <% @weeks.times do |week| %>
+      <tr>
+        <% @dates.select { |h| h[:week_no] == week }.each do |day| %>
+          <td class = 'date-label'>
+            <div class = 'dates'><%= day[:date].strftime("%b %-d") %> </div>
+            <div class = 'appt-data'><%= day[:family] %> </div>
+            <div class = 'appt-data'><%= day[:contact_info] %> </div>
+            <div class = 'appt-data'><%= day[:other_info] %> </div>
+            <!-- <div> Week Number:<%= day[:week_no] %></div>
+            <div> Day Number:<%= day[:day_no] %></div> -->
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>

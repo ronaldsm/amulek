@@ -1,10 +1,12 @@
 class CompanionshipsController < ApplicationController
 
   def index
-    @companionships = Companionship.all
+    @companionships = Companionship.all.order(id: :asc)
   end
 
-
+  def edit
+    @companionship = Companionship.find(params[:id])
+  end
 
   def create
     @companionship = Companionship.new(companionship_params)
@@ -26,6 +28,16 @@ class CompanionshipsController < ApplicationController
 
   def new
     @companionship = Companionship.new
+  end
+
+  def update
+    @companionship = Companionship.find(params[:id])
+
+    if @companionship.update(companionship_params)
+      redirect_to @companionship
+    else
+      render 'edit'
+    end
   end
 
   private
