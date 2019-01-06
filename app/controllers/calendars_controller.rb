@@ -4,6 +4,7 @@ class CalendarsController < ApplicationController
     @weeks = 6
     @dates = get_day_data(start_date, @weeks)
     @companionship = Companionship.find(params[:id])
+    @companionships = Companionship.all.order(label: :asc)
     @appointments = @companionship.appointments
     @dates = populate_appts_data(@dates)
   end
