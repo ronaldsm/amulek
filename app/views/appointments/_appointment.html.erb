@@ -11,7 +11,7 @@
         <%= appointment.date %>
       </td>
       <td>
-        <%= appointment.family %>
+        <%= link_to "#{appointment.family}",  edit_companionship_appointment_path(@companionship, appointment)  %>
       </td>
       <td>
         <%= appointment.contact_info %>
@@ -19,6 +19,9 @@
       <td>
         <%= appointment.other_info %>
       </td>
-
+      <td>
+        <%# <%= raise params.inspect %>
+        <%= link_to 'Edit', edit_companionship_appointment_path(@companionship, appointment) %>
+      </td>
     </tr>
   <% end %>

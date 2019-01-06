@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     resources :appointments
   end
 
-  get '/appointments', to: 'appointments#index'
+  # get '/appointments', to: 'appointments#index'
+  # get '/appointments/:id', to: 'appointments#show', as: :appointments_path
 
   get '/calendars/:id', to: 'calendars#show', as: :calendar_path
   root 'companionships#index'

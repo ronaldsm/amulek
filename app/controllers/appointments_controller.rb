@@ -11,16 +11,26 @@ class AppointmentsController < ApplicationController
     redirect_to companionship_path(@companionship)
   end
 
+  def edit
+    @appointment = Appointment.find(params[:id])
+  end
 
-  # def create
-  #   @article = Article.find(params[:article_id])
-  #   @comment = @article.comments.create(comment_params)
-  #   redirect_to article_path(@article)
-  # end
+  def update
+    @appointment = Appointment.find(params[:id])
+
+    if @appointment.update(appointment_params)
+      redirect_to @appointment.companionship
+    else
+      render 'edit'
+    end
+  end
+
+  def show
+    @appointment = Appointment.find(params[:id])
+  end
 
   def destroy
-    @companionship = Companionship.find(params[:companionship_id])
-    @appointment = @companionship.appointments.find(params[:id])
+    @appointment = Appointment.find(params[:id])
     @appointment.destroy
     redirect_to companionship_path(@companionship)
   end
