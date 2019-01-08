@@ -1,5 +1,4 @@
-<h1>Calendar</h1>
-<h2><%= @companionship.label %></h2>
+<h2>Forest Heights/Strathcona Missionary Meal Calendar</h2>
   <table class = 'companionships'>
     <% @companionships.each do |comp| %>
       <th  class="tab <%= 'active' if comp.id.to_s == params[:id] %>"><%= link_to "#{comp.label}", calendar_path_url(comp.id) %></th>
@@ -18,15 +17,15 @@
     <% @weeks.times do |week| %>
       <tr>
         <% @dates.select { |h| h[:week_no] == week }.each do |day| %>
-          <td class = 'date-label'>
+          <td class = 'calendar-cell'>
             <div class = 'dates'><%= day[:date].strftime("%b %-d") %> </div>
 
             <% if day[:family] %>
-              <div class = 'appt-data'><%= day[:family] %> </div>
-              <div class = 'appt-data'><%= day[:contact_info] %> </div>
-              <div class = 'appt-data'><%= day[:other_info] %> </div>
+              <div class = 'appt-data family'><%= day[:family] %> </div>
+              <div class = 'appt-data contact'><%= day[:contact_info] %> </div>
+              <div class = 'appt-data other'><%= day[:other_info] %> </div>
             <% else %>
-              <div class = 'no-appt'><%= link_to 'Sign Up' %></div>
+              <div class = 'appt-none'><%= link_to 'Sign Up', new_companionship_appointment_path(@companionship) %></div>
             <% end %>
             <!-- <div> Week Number:<%= day[:week_no] %></div>
             <div> Day Number:<%= day[:day_no] %></div> -->
