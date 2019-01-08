@@ -2,39 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.dates {
-  text-align: right;
-  background-color: lightgray;
-}
-.calendar-cell{
-  height: 8em;
-  width: 8em;
-  padding: 0;
-  vertical-align: top;
+
+.calendar-header{
+  min-width: 10rem;
 }
 
-.appt-data {
-  height: 2em;
-  font-size: 1em;
-  background-color: rgba(128, 128, 128, 0.3);
-  padding-left: 10px;
-}
-.appt-none {
-  text-align: center;
-  background-color: white;
-  padding-top: 2.2em;
-}
-
-.calendar-table {
-  width: 100%;
-  vertical-align: top;
-}
-
-.weekdays{
-  background-color: gray;
-}
-
-.tab.active{
-  font-size: xx-large;
-  background-color: lightgray;
+.calendar-row{
+  height: 10rem;
 }
