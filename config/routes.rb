@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get '/appointments/:id', to: 'appointments#show', as: :appointments_path
 
   get '/calendars/:id', to: 'calendars#show', as: :calendar_path
-  root 'companionships#index'
+  get '/calendar', to: 'calendars#show_first', as: :calendar_default
+  root 'calendars#show_first'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -9,6 +9,10 @@ class CalendarsController < ApplicationController
     @dates = populate_appts_data(@dates)
   end
 
+  def show_first
+    redirect_to controller: 'calendars', action: 'show', id: Companionship.all.first
+  end
+
   def start_date
     Date.today.beginning_of_week - 1
   end
