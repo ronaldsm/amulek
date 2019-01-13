@@ -29,7 +29,7 @@
                     <div class = 'card-text appt-data other'><%= day[:other_info] %> </div>
                     <div class = 'card-text text-right'><%= link_to 'Edit', new_companionship_appointment_path(@companionship) %> </div>
                     <% else %>
-                    <div class = 'appt-none'><%= link_to 'Sign Up', new_companionship_appointment_path(@companionship) %></div>
+                    <div class = 'appt-none'><%= link_to 'Sign Up', new_companionship_appointment_with_date_path(@companionship, day) %></div>
                     <% end %>
                     <!-- <div> Week Number:<%= day[:week_no] %></div>
                       <div> Day Number:<%= day[:day_no] %></div> -->

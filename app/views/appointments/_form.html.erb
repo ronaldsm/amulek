@@ -1,5 +1,6 @@
-<h2>Add an appointment</h2>
-
+<h2>Feed the
+<%= @companionship.label %>
+</h2>
 
 
 <%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
