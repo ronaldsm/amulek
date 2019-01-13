@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   def create
     @companionship = Companionship.find(params[:companionship_id])
     @appointment = @companionship.appointments.create(appointment_params)
-    redirect_to companionship_path(@companionship)
+    redirect_to @companionship
   end
 
   def edit
@@ -34,7 +34,7 @@ class AppointmentsController < ApplicationController
   end
 
   def new
-    @appointment = Appointment.new
+    @companionship = Companionship.find(params[:companionship_id])
   end
 
   private
