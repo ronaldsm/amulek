@@ -7,7 +7,7 @@
 
  <p>
    <%= form.label :date %><br>
-   <%= form.text_field :date, value: Date.today%>
+   <%= form.text_field :date, disabled: "disabled", value: params[:date]%>
  </p>
  <p>
    <%= form.label :family %><br>
