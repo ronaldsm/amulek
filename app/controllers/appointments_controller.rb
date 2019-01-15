@@ -6,7 +6,7 @@ class AppointmentsController < ApplicationController
   def create
     @companionship = Companionship.find(params[:companionship_id])
     @appointment = @companionship.appointments.create(appointment_params)
-    redirect_to @companionship
+    redirect_to calendar_path_url(@companionship)
   end
 
   def edit
@@ -35,6 +35,7 @@ class AppointmentsController < ApplicationController
 
   def new
     @companionship = Companionship.find(params[:companionship_id])
+    @appointment_date = Date.parse params[:date]
   end
 
   private
