@@ -5,6 +5,7 @@
 <h3>
   <%= @appointment_date.strftime('%A %b %-d, %Y') %>
 </h3>
+
 <% end %>
 
 <%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
@@ -15,19 +16,20 @@
  </p>
  <p>
    <%= form.label :family %><br>
-   <%= form.text_field :family %>
+   <%= form.text_field :family, value: (@appointment ? @appointment[:family] : '')  %>
  </p>
  <p>
    <%= form.label :contact_info %><br>
-   <%= form.text_field :contact_info %>
+   <%= form.text_field :contact_info, value: (@appointment ? @appointment[:contact_info] : '') %>
  </p>
  <p>
    <%= form.label :other_info %><br>
-   <%= form.text_field :other_info %>
+   <%= form.text_field :other_info, value: (@appointment ? @appointment[:other_info] : '') %>
  </p>
 
  <p>
    <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
-   <%= form.submit %>
+   <%= form.submit (@appointment ? "Update Appointment": "Create Appointment") %>
+   <%= (link_to "Delete", :back, {:class=>"btn btn-default"}) if @appointment %>
  </p>
 <% end %>

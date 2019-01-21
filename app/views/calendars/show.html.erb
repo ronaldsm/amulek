@@ -27,7 +27,7 @@
                     <div class = 'card-text appt-data family'><%= day[:family] %> </div>
                     <div class = 'card-text appt-data contact'><%= day[:contact_info] %> </div>
                     <div class = 'card-text appt-data other'><%= day[:other_info] %> </div>
-                    <div class = 'card-text text-right'><%= link_to 'Edit', new_companionship_appointment_path(@companionship) %> </div>
+                    <div class = 'card-text text-right'><%= link_to 'Edit', edit_companionship_appointment_path(@companionship, day[:appointment_id]) %> </div>
                     <% else %>
                     <div class = 'appt-none'><%= link_to 'Sign Up', new_companionship_appointment_with_date_path(@companionship, day[:date]) %></div>
                     <% end %>

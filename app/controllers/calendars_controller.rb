@@ -40,6 +40,7 @@ class CalendarsController < ApplicationController
         d[:family] = appt[:family]
         d[:contact_info] = appt[:contact_info]
         d[:other_info] = appt[:other_info]
+        d[:appointment_id] = appt[:id]
       end
     end
     dates_data
