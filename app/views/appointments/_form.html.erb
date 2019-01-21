@@ -27,9 +27,14 @@
    <%= form.text_field :other_info, value: (@appointment ? @appointment[:other_info] : '') %>
  </p>
 
- <p>
-   <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
-   <%= form.submit (@appointment ? "Update Appointment": "Create Appointment") %>
-   <%= (link_to "Delete", :back, {:class=>"btn btn-default"}) if @appointment %>
- </p>
+  <p>
+    <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
+    <%= form.submit (@appointment ? "Update Appointment": "Create Appointment") %>
+    <%= (link_to 'Delete', companionship_appointment_path(@companionship,@appointment),
+           method: :delete,
+           data: {confirm: 'Are you sure you want to delete this appointment? This action cannot be undone'}
+         ) if @appointment
+    %>
+
+  </p>
 <% end %>
