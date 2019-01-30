@@ -4,7 +4,6 @@ class AppointmentsController < ApplicationController
   end
 
   def create
-    raise 'error'
     @companionship = Companionship.find(params[:companionship_id])
     @appointment = @companionship.appointments.create(appointment_params)
     redirect_to calendar_path_url(@companionship)
@@ -18,7 +17,6 @@ class AppointmentsController < ApplicationController
 
   def update
     @appointment = Appointment.find(params[:id])
-    raise 'error'
     if @appointment.update(appointment_params)
       redirect_to calendar_path_url(@companionship)
     else
@@ -33,7 +31,7 @@ class AppointmentsController < ApplicationController
   def destroy
     @appointment = Appointment.find(params[:id])
     @appointment.destroy
-    redirect_to companionship_path(@companionship)
+    redirect_to calendar_path_url(@appointment.companionship[:id])
   end
 
   def new
