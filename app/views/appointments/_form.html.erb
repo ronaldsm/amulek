@@ -1,31 +1,30 @@
-<h2>Feed the
-<%= @companionship.label %>
-</h2>
-<% if @appointment_date %>
-<h3>
-  <%= @appointment_date.strftime('%A %b %-d, %Y') %>
-</h3>
+<div class='container'>
+  <h2>Feed the
+  <%= @companionship.label %>
+  </h2>
+  <% if @appointment_date %>
+  <h3>
+    <%= @appointment_date.strftime('%A %b %-d, %Y') %>
+  </h3>
 
-<% end %>
+  <% end %>
 
-<%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
-
-
- <p>
-   <%= form.hidden_field :date, value: params[:date]%>
- </p>
- <p>
-   <%= form.label :family %><br>
-   <%= form.text_field :family, value: (@appointment ? @appointment[:family] : '')  %>
- </p>
- <p>
-   <%= form.label :contact_info %><br>
-   <%= form.text_field :contact_info, value: (@appointment ? @appointment[:contact_info] : '') %>
- </p>
- <p>
-   <%= form.label :other_info %><br>
-   <%= form.text_field :other_info, value: (@appointment ? @appointment[:other_info] : '') %>
- </p>
+  <%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
+  <p>
+    <%= form.hidden_field :date, value: params[:date]%>
+  </p>
+  <p>
+    <%= form.label(:family, class: '') %><br>
+    <%= form.text_field :family, value: (@appointment ? @appointment[:family] : '')  %>
+  </p>
+  <p>
+    <%= form.label :contact_info %><br>
+    <%= form.text_field :contact_info, value: (@appointment ? @appointment[:contact_info] : '') %>
+  </p>
+  <p>
+    <%= form.label :other_info %><br>
+    <%= form.text_field :other_info, value: (@appointment ? @appointment[:other_info] : '') %>
+  </p>
 
   <p>
     <%= link_to "Cancel", :back, {:class=>"btn btn-default"} %>
@@ -35,6 +34,6 @@
            data: {confirm: 'Are you sure you want to delete this appointment? This action cannot be undone'}
          ) if @appointment
     %>
-
   </p>
+</div>
 <% end %>
