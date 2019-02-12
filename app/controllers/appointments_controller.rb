@@ -18,7 +18,7 @@ class AppointmentsController < ApplicationController
   def update
     @appointment = Appointment.find(params[:id])
     if @appointment.update(appointment_params)
-      redirect_to calendar_path_url(@companionship)
+      redirect_to calendar_path_url(@appointment.companionship)
     else
       render 'edit'
     end
