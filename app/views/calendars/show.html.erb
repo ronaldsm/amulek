@@ -10,7 +10,7 @@
     </li>
   </ul>
 
-    <div class="table table table-md">
+    <div class="table table table-md table-bordered">
       <table id = 'calendar' class = 'calendar-table table-responsive-md'>
         <tr class = 'table-active'>
           <% @dates.take(7).each do |day| %>
@@ -32,7 +32,7 @@
                       <div class = 'card-text text-right '>
                         <%= link_to '<i class="fas fa-edit"></i> Edit'.html_safe, edit_companionship_appointment_path(@companionship, day[:appointment_id]) %> </div>
                       <% else %>
-                      <div class = 'appt-none'><%= link_to 'Sign Up', new_companionship_appointment_with_date_path(@companionship, day[:date]) %></div>
+                      <div class = 'appt-none'><%= link_to '<i class="fas fa-calendar-plus"></i> Sign Up'.html_safe, new_companionship_appointment_with_date_path(@companionship, day[:date]) %></div>
                       <% end %>
                       <!-- <div> Week Number:<%= day[:week_no] %></div>
                         <div> Day Number:<%= day[:day_no] %></div> -->
