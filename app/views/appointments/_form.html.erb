@@ -12,7 +12,7 @@
     <%= form.hidden_field :date, value: params[:date]%>
   </p>
   <p>
-    <%= form.label(:family, class: '') %><br>
+    <%= form.label(:family,:autofocus => true, class: '') %><br>
     <%= form.text_field :family %>
   </p>
   <p>

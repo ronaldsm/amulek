@@ -14,7 +14,7 @@
    </p>
    <p>
      <%= form.label :family %><br>
-     <%= form.text_field :family, value: (@appointment[:family])  %>
+     <%= form.text_field :family, :autofocus => true,  value: (@appointment[:family])  %>
    </p>
    <p>
      <%= form.label :contact_info %><br>
