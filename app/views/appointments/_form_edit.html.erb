@@ -1,39 +1,37 @@
-<div class='container'>
-  <h2>Feed the
-  <%= @companionship.label %>
-  </h2>
-  <h3>
-    <%= @appointment_date.strftime('%A %b %-d, %Y') %>
-  </h3>
+<h2>Feed the
+<%= @companionship.label %>
+</h2>
+<h3>
+  <%= @appointment_date.strftime('%A %b %-d, %Y') %>
+</h3>
 
-  <%= form_with(model: [ @companionship, @appointment], local: true) do |form| %>
-    <input name="_method" type="hidden" value="patch" />
+<%= form_with(model: [ @companionship, @appointment], local: true) do |form| %>
+  <input name="_method" type="hidden" value="patch" />
 
-   <p>
-     <%= form.hidden_field :date, value: @appointment[:date]%>
-   </p>
-   <p>
-     <%= form.label :family %><br>
-     <%= form.text_field :family, :autofocus => true,  value: (@appointment[:family])  %>
-   </p>
-   <p>
-     <%= form.label :contact_info %><br>
-     <%= form.text_field :contact_info, value: (@appointment[:contact_info]) %>
-   </p>
-   <p>
-     <%= form.label :other_info %><br>
-     <%= form.text_field :other_info, value: (@appointment[:other_info]) %>
-   </p>
+ <p>
+   <%= form.hidden_field :date, value: @appointment[:date]%>
+ </p>
+ <p>
+   <%= form.label :family %><br>
+   <%= form.text_field :family, :autofocus => true,  value: (@appointment[:family])  %>
+ </p>
+ <p>
+   <%= form.label :contact_info %><br>
+   <%= form.text_field :contact_info, value: (@appointment[:contact_info]) %>
+ </p>
+ <p>
+   <%= form.label :other_info %><br>
+   <%= form.text_field :other_info, value: (@appointment[:other_info]) %>
+ </p>
 
-    <p>
-      <%= link_to "Cancel", :back, {:class=>"btn btn-secondary"} %>
-        <%= (link_to '<i class="fas fa-trash-alt"></i> Delete'.html_safe, companionship_appointment_path(@companionship,@appointment),
-               method: :delete,
-               data: {confirm: 'Are you sure you want to delete this appointment? This action cannot be undone.'},
-               :class => "btn btn-secondary"
-             )
-        %>
-        <%= form.submit("Save Changes", :class=> "btn btn-primary") %>
-    </p>
-  <% end %>
-</div>
+  <p>
+    <%= link_to "Cancel", :back, {:class=>"btn btn-secondary"} %>
+      <%= (link_to '<i class="fas fa-trash-alt"></i> Delete'.html_safe, companionship_appointment_path(@companionship,@appointment),
+             method: :delete,
+             data: {confirm: 'Are you sure you want to delete this appointment? This action cannot be undone.'},
+             :class => "btn btn-secondary"
+           )
+      %>
+      <%= form.submit("Save Changes", :class=> "btn btn-primary") %>
+  </p>
+<% end %>

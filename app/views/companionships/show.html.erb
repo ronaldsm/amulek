@@ -1,13 +1,10 @@
+<h1>Companionship</h1>
+<h2>
+  <%= @companionship.label %>
+</h2>
 
-<div class='container'>
-  <h1>Companionship</h1>
-  <h2>
-    <%= @companionship.label %>
-  </h2>
+<h2>Current Appointments</h2>
 
-  <h2>Current Appointments</h2>
+<%= render '/appointments/appointment' %>
 
-  <%= render '/appointments/appointment' %>
-
-  <%= link_to 'view all', controller: 'companionships' %>
-</div>
+<%= link_to 'view all', controller: 'companionships' %>

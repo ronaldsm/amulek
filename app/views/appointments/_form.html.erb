@@ -1,33 +1,32 @@
-<div class='container'>
-  <h2>Feed the
-  <%= @companionship.label %>
-  </h2>
 
-  <h3>
-    <%= @appointment_date.strftime('%A %b %-d, %Y') %>
-  </h3>
+<h2>Feed the
+<%= @companionship.label %>
+</h2>
 
-  <%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
-  <p>
-    <%= form.hidden_field :date, value: params[:date]%>
-  </p>
-  <p>
-    <%= form.label(:family,:autofocus => true, class: '') %><br>
-    <%= form.text_field :family %>
-  </p>
-  <p>
-    <%= form.label :contact_info %><br>
-    <%= form.text_field :contact_info %>
-  </p>
-  <p>
-    <%= form.label :other_info %><br>
-    <%= form.text_field :other_info %>
-  </p>
+<h3>
+  <%= @appointment_date.strftime('%A %b %-d, %Y') %>
+</h3>
 
-  <p>
-    <%= link_to "Cancel", :back, {:class=>"btn btn-secondary"} %>
-    <%= form.submit("Create Appointment", :class=> "btn btn-primary") %>
-  </p>
+<%= form_with(model: [ @companionship, @companionship.appointments.build ], local: true) do |form| %>
+<p>
+  <%= form.hidden_field :date, value: params[:date]%>
+</p>
+<p>
+  <%= form.label(:family,:autofocus => true, class: '') %><br>
+  <%= form.text_field :family %>
+</p>
+<p>
+  <%= form.label :contact_info %><br>
+  <%= form.text_field :contact_info %>
+</p>
+<p>
+  <%= form.label :other_info %><br>
+  <%= form.text_field :other_info %>
+</p>
 
-</div>
+<p>
+  <%= link_to "Cancel", :back, {:class=>"btn btn-secondary"} %>
+  <%= form.submit("Create Appointment", :class=> "btn btn-primary") %>
+</p>
+
 <% end %>

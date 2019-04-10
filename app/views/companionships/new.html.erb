@@ -1,15 +1,13 @@
-<div class="container">
-  <h1>New Companionship</h1>
-  <p>Create a new companionship</p>
+<h1>New Companionship</h1>
+<p>Create a new companionship</p>
 
-  <%= form_with scope: :companionship, url: :companionships, local: true do |form| %>
-    <p>
-      <%= form.label :label %><br>
-      <%= form.text_field :label %>
-    </p>
-    <p>
-      <%= link_to 'cancel', controller: 'companionships' %>
-      <%= form.submit %>
-    </p>
-  <% end %>
-</div>
+<%= form_with scope: :companionship, url: :companionships, local: true do |form| %>
+  <p>
+    <%= form.label :label %><br>
+    <%= form.text_field :label %>
+  </p>
+  <p>
+    <%= link_to 'cancel', controller: 'companionships' %>
+    <%= form.submit %>
+  </p>
+<% end %>
