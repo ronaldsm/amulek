@@ -11,8 +11,8 @@
   </li>
 </ul>
 
-  <div class="table table table-md table-bordered">
-    <table id = 'calendar' class = 'calendar-table table-responsive'>
+  <div class="table table table-md table-bordered  table-responsive">
+    <table id = 'calendar' class = 'calendar-table'>
       <tr class = 'table-active'>
         <% @dates.take(7).each do |day| %>
           <td class='calendar-header'><%= day[:date].strftime("%A") %></td>
