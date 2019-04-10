@@ -1,48 +1,48 @@
-  <h4>Forest Heights/Strathcona Missionary Meal Calendar</h4>
+<h4>Forest Heights/Strathcona Missionary Meal Calendar</h4>
 
-  <!-- <form>
-    <input class="d-print-none" type="button" value="Print" onclick="window.print()" />
-  </form> -->
-  <ul class="nav nav-tabs">
-    <% @companionships.each do |comp| %>
-      <li class="nav-item">
-        <a class="nav-link d-print-none <%= 'active d-print-inline' if comp.id.to_s == params[:id] %>" href="<%= calendar_path_url(comp.id) %>"><%= comp.label %></a>
-    <% end %>
-    </li>
-  </ul>
+<!-- <form>
+  <input class="d-print-none" type="button" value="Print" onclick="window.print()" />
+</form> -->
+<ul class="nav nav-tabs">
+  <% @companionships.each do |comp| %>
+    <li class="nav-item">
+      <a class="nav-link d-print-none <%= 'active d-print-inline' if comp.id.to_s == params[:id] %>" href="<%= calendar_path_url(comp.id) %>"><%= comp.label %></a>
+  <% end %>
+  </li>
+</ul>
 
-    <div class="table table table-md table-bordered table-responsive">
-      <table id = 'calendar' class = 'calendar-table table-responsive-md'>
-        <tr class = 'table-active'>
-          <% @dates.take(7).each do |day| %>
-            <td class='calendar-header'><%= day[:date].strftime("%A") %></td>
-          <% end %>
-        </tr>
-
-        <% @weeks.times do |week| %>
-            <tr class="calendar-row">
-              <% @dates.select { |h| h[:week_no] == week }.each do |day| %>
-                <td class = 'calendar-cell p-0 <%= 'signed-up' if day[:family] %>'>
-                  <div class="card border-0 p-0">
-                    <div class = 'card-header p-0 m-0 text-right'><%= day[:date].strftime("%b %-d") %> </div>
-                    <div class="card-body p-1 text-secondary <%= 'signed-up' if day[:family] %> ">
-                      <% if day[:family] %>
-                      <div class = 'card-text appt-data family'><%= day[:family] %> </div>
-                      <div class = 'card-text appt-data contact'><%= day[:contact_info] %> </div>
-                      <div class = 'card-text appt-data other'><%= day[:other_info] %> </div>
-                      <div class = 'card-text text-right d-print-none'>
-                        <%= link_to '<i class="fas fa-edit"></i> Edit'.html_safe, edit_companionship_appointment_path(@companionship, day[:appointment_id]) %> </div>
-                      <% else %>
-                      <div class = 'appt-none  d-print-none'><%= link_to '<i class="fas fa-calendar-plus"></i> Sign Up'.html_safe, new_companionship_appointment_with_date_path(@companionship, day[:date]) %></div>
-                      <% end %>
-                      <!-- <div> Week Number:<%= day[:week_no] %></div>
-                        <div> Day Number:<%= day[:day_no] %></div> -->
-                    </div>
-                  </div>
-                  </td>
-                  <% end %>
-              </tr>
+  <div class="table table table-md table-bordered">
+    <table id = 'calendar' class = 'calendar-table'>
+      <tr class = 'table-active'>
+        <% @dates.take(7).each do |day| %>
+          <td class='calendar-header'><%= day[:date].strftime("%A") %></td>
         <% end %>
-      </table>
-    </div>
+      </tr>
+
+      <% @weeks.times do |week| %>
+          <tr class="calendar-row">
+            <% @dates.select { |h| h[:week_no] == week }.each do |day| %>
+              <td class = 'calendar-cell p-0 <%= 'signed-up' if day[:family] %>'>
+                <div class="card border-0 p-0">
+                  <div class = 'card-header p-0 m-0 text-right'><%= day[:date].strftime("%b %-d") %> </div>
+                  <div class="card-body p-1 text-secondary <%= 'signed-up' if day[:family] %> ">
+                    <% if day[:family] %>
+                    <div class = 'card-text appt-data family'><%= day[:family] %> </div>
+                    <div class = 'card-text appt-data contact'><%= day[:contact_info] %> </div>
+                    <div class = 'card-text appt-data other'><%= day[:other_info] %> </div>
+                    <div class = 'card-text text-right d-print-none'>
+                      <%= link_to '<i class="fas fa-edit"></i> Edit'.html_safe, edit_companionship_appointment_path(@companionship, day[:appointment_id]) %> </div>
+                    <% else %>
+                    <div class = 'appt-none  d-print-none'><%= link_to '<i class="fas fa-calendar-plus"></i> Sign Up'.html_safe, new_companionship_appointment_with_date_path(@companionship, day[:date]) %></div>
+                    <% end %>
+                    <!-- <div> Week Number:<%= day[:week_no] %></div>
+                      <div> Day Number:<%= day[:day_no] %></div> -->
+                  </div>
+                </div>
+                </td>
+                <% end %>
+            </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
