@@ -1,9 +1,14 @@
 @media print{
   .calendar-header{
-    min-width: 8.5rem;
+    width: 14%;
+    // min-width: 8.5rem;
   }
 
   .calendar-row{
     height: 7rem;
   }
+}
+
+.calendar-date.card-header{
+    border-bottom: none;
 }
