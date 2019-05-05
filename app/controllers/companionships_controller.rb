@@ -1,6 +1,6 @@
 class CompanionshipsController < ApplicationController
 
-  http_basic_authenticate_with name: "Ron", password: "welcome", except: [:index, :show]
+  http_basic_authenticate_with name: "Ron", password: "welcome", except: [:show]
 
   def index
     @companionships = Companionship.all.order(id: :asc)
