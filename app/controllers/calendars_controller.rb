@@ -14,7 +14,7 @@ class CalendarsController < ApplicationController
   end
 
   def start_date
-    Date.today.beginning_of_week - 1
+    Date.today.beginning_of_week(:sunday)
   end
 
   def get_day_data(start_date, num_weeks)
